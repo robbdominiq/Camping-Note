@@ -415,7 +415,6 @@ function App() {
                             variant='outline'
                             size='sm'
                             disabled={isSigningOut}
-                            className='cursor-pointer'
                         >
                             {isSigningOut ? (
                                 <>
@@ -437,7 +436,7 @@ function App() {
             <div className='max-w-4xl mx-auto px-4 py-8'>
                 {/* Stats Cards */}
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-4 mb-8'>
-                    <Card className='border-0 shadow-gray-300 bg-gray-100'>
+                    <Card>
                         <CardContent className='p-4 text-center'>
                             <div className='text-2xl font-bold text-blue-600'>
                                 {isLoadingTasks ? (
@@ -451,7 +450,7 @@ function App() {
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className='shadow-gray-300 bg-gray-100 border-0'>
+                    <Card>
                         <CardContent className='p-4 text-center'>
                             <div className='text-2xl font-bold text-green-600'>
                                 {isLoadingTasks ? (
@@ -465,7 +464,7 @@ function App() {
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className='col-span-2 md:col-span-1 shadow-gray-300 bg-gray-100 border-0'>
+                    <Card className='col-span-2 md:col-span-1'>
                         <CardContent className='p-4 text-center'>
                             <div className='text-2xl font-bold text-orange-600'>
                                 {isLoadingTasks ? (
@@ -482,9 +481,10 @@ function App() {
                 </div>
 
                 {/* Add Task */}
-                <Card className='mb-6 shadow-gray-300 bg-gray-100 border-0'>
+                <Card className='mb-6'>
                     <CardHeader>
                         <CardTitle className='flex items-center gap-2'>
+                            <Plus className='h-5 w-5' />
                             Add New Task
                         </CardTitle>
                     </CardHeader>
@@ -505,7 +505,7 @@ function App() {
                             <Button
                                 onClick={addTask}
                                 disabled={!newTask.trim() || isAddingTask}
-                                className='shrink-0 cursor-pointer bg-amber-700 text-white'
+                                className='shrink-0'
                             >
                                 {isAddingTask ? (
                                     <>
@@ -524,7 +524,7 @@ function App() {
                 </Card>
 
                 {/* Tasks List */}
-                <Card className='shadow-gray-300 bg-gray-100 border-0'>
+                <Card>
                     <CardHeader>
                         <CardTitle>Your Tasks</CardTitle>
                         <CardDescription>
@@ -559,7 +559,7 @@ function App() {
                                                     }
                                                     variant='ghost'
                                                     size='sm'
-                                                    className='p-1 h-auto cursor-grab'
+                                                    className='p-1 h-auto'
                                                     disabled={
                                                         togglingTaskId ===
                                                         task.id
